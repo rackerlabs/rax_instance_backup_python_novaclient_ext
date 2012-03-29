@@ -32,7 +32,7 @@ def backup(self, server, image_name, backup_type, rotation):
     :param rotation: number of backups of type 'backup_type' to keep
     :returns Newly created :class:`Image` object
     """
-    if not rotation:
+    if rotation is None:
         raise Exception("rotation is required for backups")
     elif not backup_type:
         raise Exception("backup_type required for backups")
